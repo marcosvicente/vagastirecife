@@ -1,0 +1,16 @@
+{% extends 'jobs/base.html' %}
+
+{% block content %}
+
+{% for job in jobs %}
+
+<div class="job">
+    <h3 class="job-title">{{ job.title|title }}</h3>
+    <h6 class="job-type"> {{ job.job_type }}</h6>
+    <h6 class="timestamp">{{ job.timestamp|timesince }} ago</h6>
+    <p class="job-description"> {{ job.description|linebreaks|truncatechars:200 }}</p>
+</div>
+
+{% endfor %}
+
+{% endblock content %}
