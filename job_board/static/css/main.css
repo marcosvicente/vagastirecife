@@ -27,6 +27,10 @@
     border-radius: 7px;
 }
 
+.job-title {
+    font-weight: bold;
+}
+
 .main-menu {
     list-style: none;
 }

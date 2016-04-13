@@ -11,7 +11,7 @@ class Job(models.Model):
     url = models.URLField()
     company = models.CharField(max_length=140)
     salary = models.DecimalField(default=0, max_digits=19, decimal_places=2)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, editable=False)
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
