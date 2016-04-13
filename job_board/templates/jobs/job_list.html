@@ -4,11 +4,16 @@
 
 {% for job in jobs %}
 
-<div class="job">
-    <h3 class="job-title">{{ job.title|title }}</h3>
-    <h6 class="job-type"> {{ job.job_type }}</h6>
-    <h6 class="timestamp">{{ job.timestamp|timesince }} ago</h6>
-    <p class="job-description"> {{ job.description|linebreaks|truncatechars:200 }}</p>
+<div id="job" class="job">
+    <div class="job-title">
+        <h5 class="job-type">{{ job.job_type }}</h5>
+        <h3>{{ job.title|title }} <span class="job-co"> on <a class="job-url" target="_blank" href="{{ job.url }}">{{ job.company }}</a></span></h3>
+    </div>
+    <div class="clearfix">
+        <p><h6 class="timestamp">{{ job.timestamp|timesince }} ago</h6></p>
+        <p class="job-description"> {{ job.description|linebreaks|truncatechars:200 }}</p>
+        <a class="btn btn-success read-more" href="">Apply for this job</a>
+    </div>
 </div>
 
 {% endfor %}

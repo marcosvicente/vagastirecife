@@ -3,7 +3,59 @@
     padding: 0;
 }
 
+.header {
+    margin: 3rem 0;
+}
+
+.header .btn-job {
+    float: right;
+}
+
+.logo {
+    margin: 0.7rem;
+}
+
+.logo span {
+    font-weight: bolder;
+}
+
 .job {
     border: 1px solid;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    border-radius: 7px;
+}
+
+.main-menu {
+    list-style: none;
+}
+
+.main-menu li {
+    display: inline-block;
+    padding-top: 0.7rem;
+}
+
+.main-menu li a {
+    padding-right: 1.4rem;
+}
+
+.job-co {
+    font-size: 0.6em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.read-more {
+    font-size: 1.2rem;
+    margin: 0 1rem 1rem 0;
+    float: right;
+}
+
+.job-type {
+    float: right;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #2c3e50;
+    margin: 1% 2% 0 0;
 }
