@@ -6,13 +6,13 @@
 
 <div id="job" class="job">
     <div class="job-title">
-        <h5 class="job-type">{{ job.job_type }}</h5>
+        <h5 class="{{ job.job_type }} job-type">{{ job.job_type }}</h5>
         <h3>{{ job.title|title }} <span class="job-co"> on <a class="job-url" target="_blank" href="{{ job.url }}">{{ job.company }}</a></span></h3>
     </div>
     <div class="clearfix">
         <p><h6 class="timestamp">{{ job.timestamp|timesince }} ago</h6></p>
         <p class="job-description"> {{ job.description|linebreaks|truncatechars:200 }}</p>
-        <a class="btn btn-success read-more" href="">Apply for this job</a>
+        <a class="btn btn-success read-more" href="{% url 'job_detail' slug=job.slug %}">Apply for this job</a>
     </div>
 </div>
 
