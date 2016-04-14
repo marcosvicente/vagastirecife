@@ -5,9 +5,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %} Django Job Board {% endblock title %}</title>
+    <title>{% block title %} Vagas TI Recife - Seu portal de vagas em TI no Recife {% endblock title %}</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
@@ -15,12 +16,12 @@
     <div class="row">
         <div class="header col-md-12">
             <header>
-                <h3 class="logo pull-left">Django<span>Job</span>Board</h3>
-                <a href="#" class="btn btn-danger pull-right">Add a Job</a>
+                <h3 class="logo pull-left"><a href="{% url 'index' %}">Vagas<span>TI</span>Recife</a></h3>
+                <a href="#" class="btn btn-danger pull-right">Anuncie uma vaga</a>
                 <ul class="main-menu pull-right">
-                    <li><a href="#">Full-Time</a></li>
-                    <li><a href="#">Part-Time</a></li>
+                    <li><a href="#">Presencial</a></li>
                     <li><a href="#">Freelancer</a></li>
+                    <li><a href="#">Remoto</a></li>
                 </ul>
             </header>
         </div>
@@ -35,6 +36,6 @@
             {% endblock sidebar %}
         </div>
     </div>
-</div>    
+</div>
 </body>
 </html>

@@ -1,0 +1,23 @@
+{% extends 'jobs/base.html' %}
+{% load humanize %}
+{% block title %} Oportunidade para {{ job.title }} em Vagas TI Recife {% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h1 class="detail-title">{{ job.title }}</h1>
+      <div class="detail-info">
+        <span> {{ job.timestamp }}</span>
+        <span><a href="{{ job.url }}" target='_blank'>{{ job.company }}</a></span>
+        <span>Contratação: {{ job.job_type|title }}</span>
+        <span>Remuneração: R$ {{ job.salary|intcomma }}</span>
+        <span>Modalidade: {{ job.category }}</span>
+      </div>
+      <div class="detail-description">
+        <p>{{ job.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

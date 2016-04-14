@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+h1, h3 {
+  font-family: 'Oxygen', sans-serif;
+}
+
 .header {
     margin: 3rem 0;
 }
@@ -13,6 +17,12 @@
 
 .logo {
     margin: 0.7rem;
+    text-transform: uppercase;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #34495e;
 }
 
 .logo span {
@@ -25,6 +35,10 @@
     padding-left: 1.5rem;
     padding-right: 0.5rem;
     border-radius: 7px;
+}
+
+.detail-title {
+    color: #7f8c8d;
 }
 
 .job-title {
@@ -41,7 +55,16 @@
 }
 
 .main-menu li a {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #34495e;
     padding-right: 1.4rem;
+}
+
+.main-menu li a:hover {
+    text-decoration: none;
+    color: #7f8c8d;
+    transition: all 0.2s ease-in-out;
 }
 
 .job-co {
@@ -64,10 +87,14 @@
     margin: 1% 2% 0 0;
 }
 
-.presential {
+.presencial {
     color: #e67e22;
 }
 
-.remote {
-    color: #2980b9;
+.remoto {
+    color: #27ae60;
+}
+
+.freelancer {
+    color: #3498db;
 }
