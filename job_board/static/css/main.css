@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.row {
+    margin-bottom: 15px;
+}
+
 h1, h3 {
   font-family: 'Oxygen', sans-serif;
 }
@@ -113,7 +117,7 @@ h1, h3 {
 
 /* MOBILE MENU */
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
     .mobile-nav {
         display: block;
         height: 40px;
@@ -140,11 +144,18 @@ h1, h3 {
 
     .mobile-logo {
         font-size: 1.5em;
-        color: black;
         text-transform: uppercase;
         font-weight: bold;
         padding-top: 0.3em;
         display: block;
+    }
+
+    .mobile-logo a {
+        color: black;
+    }
+
+    .mobile-logo a:hover {
+        text-decoration: none;
     }
 
     .main-menu {

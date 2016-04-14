@@ -12,9 +12,9 @@
       <div class="detail-info">
         <span> {{ job.timestamp }}</span>
         <span><a href="{{ job.url }}" target='_blank'>{{ job.company }}</a></span>
-        <span>Contratação: {{ job.job_type|title }}</span>
+        <span>Contratação: {{ job.category|title }}</span>
         <span>Remuneração: R$ {{ job.salary|intcomma }}</span>
-        <span>Modalidade: {{ job.category }}</span>
+        <span>Modalidade: {{ job.job_type|title }}</span>
       </div>
       <div class="detail-description">
         <p>{{ job.description }}</p>
