@@ -1,3 +1,41 @@
 .detail-title {
     color: #7f8c8d;
 }
+
+.detail-info {
+	margin: 1.5em 0;
+}
+
+.share {
+	margin-top: 1.5em;
+}
+
+.detail-info span {
+	margin-right: 1em;
+	margin-bottom: 1.5em;
+}
+
+.detail-description h4 {
+	font-weight: bolder;
+	color: #34495e;
+}
+
+.detail-email {
+	margin-top: 2em;
+	border-top: 1px solid #bdc3c7;
+	border-bottom: 1px solid #bdc3c7;
+}
+
+.detail-email .row-apply {
+	margin: 0.8em 0;
+}
+
+.detail-email p {
+	color: #bdc3c7;
+}
+
+.detail-email i {
+	color: #27ae60;
+	margin: 0.25em 0;
+	font-size: 4em;
+}

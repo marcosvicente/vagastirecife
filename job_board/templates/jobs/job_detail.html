@@ -2,7 +2,7 @@
 
 {% load humanize %}
 
-{% block title %} Oportunidade para {{ job.title }} em Vagas TI Recife {% endblock %}
+{% block title %} Vaga para {{ job.title }} em Vagas TI Recife {% endblock %}
 
 {% block content %}
 <div class="container">
@@ -10,15 +10,29 @@
     <div class="col-md-10 col-md-offset-1">
       <h1 class="detail-title">{{ job.title }}</h1>
       <div class="detail-info">
-        <span> {{ job.timestamp }}</span>
+        <span> {{ job.timestamp|date:'d F Y H:i' }}</span>
         <span><a href="{{ job.url }}" target='_blank'>{{ job.company }}</a></span>
-        <span>Contratação: {{ job.category|title }}</span>
-        <span>Remuneração: R$ {{ job.salary|intcomma }}</span>
-        <span>Modalidade: {{ job.job_type|title }}</span>
+        <span><strong>Contratação:</strong> {{ job.category }}</span>
+        <span><strong>Remuneração:</strong> {% if not job.salary %} N/A {% endif %} R$ {{ job.salary|intcomma }}</span>
+        <span><strong>Modalidade:</strong> {{ job.job_type|title }}</span>
       </div>
       <div class="detail-description">
-        <p>{{ job.description }}</p>
+        <h4>Descrição da vaga</h4>
+        <p>{{ job.description|linebreaks }}</p>
       </div>
+    </div>
+    <div class="detail-email col-md-10 col-md-offset-1">
+      <div class="col-md-1">
+        <span><i class="glyphicon glyphicon-check"></i></span>
+      </div>
+      <div class="row-apply col-md-11">
+        <h4>Se interessou pela <strong>vaga?</strong></h4>
+        <p><a href="" target="_blank">Participe da seleção</a> e boa sorte!</p>  
+      </div>
+    </div>
+    <div class="share col-md-10 col-md-offset-1">
+      <h4>Compartilhe!</h4>
+      <span><a href="{% url "index" %}" class="btn btn-danger">Voltar</a></span>
     </div>
   </div>
 </div>

@@ -75,8 +75,12 @@ h1, h3 {
     text-align: center;
     color: #fff;
     padding: 0.8em;
-    background-color: red;
+    background-color: #e74c3c;
     box-shadow: #666666;
+}
+
+.main-menu li:last-child a:hover {
+    background-color: #c0392b;
 }
 
 .job-co {
