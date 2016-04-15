@@ -5,14 +5,18 @@ from django.utils.text import slugify
 
 class Job(models.Model):
     title = models.CharField(max_length=140)
-    description = models.TextField()
+    company = models.CharField(max_length=140)
+    url = models.URLField()
+    site = models.URLField()
+    email = models.EmailField()
     category = models.ForeignKey('Category')
     job_type = models.ForeignKey('JobType')
-    url = models.URLField()
-    company = models.CharField(max_length=140)
     salary = models.DecimalField(default=0, max_digits=19, decimal_places=2)
+    description = models.TextField()
+    about = models.TextField()
+    skills = models.TextField()
     slug = models.SlugField(unique=True, editable=False)
-    timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
         return self.title

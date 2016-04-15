@@ -1,5 +1,15 @@
+h1 {
+	margin: 0;
+}
+
+.job-detail {
+	font-family: 'Lato', sans-serif;
+}
+
 .detail-title {
-    color: #7f8c8d;
+	margin-top: 0.3em;
+	font-size: 2.3em;
+    color: #34495e;
 }
 
 .detail-info {
@@ -15,7 +25,8 @@
 	margin-bottom: 1.5em;
 }
 
-.detail-description h4 {
+.detail-description h4, .detail-about h4 {
+	margin: 1em 0;
 	font-weight: bolder;
 	color: #34495e;
 }
@@ -38,4 +49,31 @@
 	color: #27ae60;
 	margin: 0.25em 0;
 	font-size: 4em;
+}
+
+.detail-timestamp {
+	margin: 0;
+	text-transform: uppercase;
+	color: #bdc3c7;
+	font-size: 1.1em;
+}
+
+.detail-info span {
+	margin-bottom: 0.5em;
+}
+
+.detail-share span {
+	margin-right: 0.1em;
+}
+
+.detail-share .face{
+	color: #3D5A98;	
+}
+
+.detail-share .link{
+	color: #0077B5;	
+}
+
+.detail-share .twit{
+	color: #55ACEE;	
 }

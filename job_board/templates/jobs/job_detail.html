@@ -6,33 +6,47 @@
 
 {% block content %}
 <div class="container">
-  <div class="row">
+  <div class="job-detail row">
     <div class="col-md-10 col-md-offset-1">
-      <h1 class="detail-title">{{ job.title }}</h1>
-      <div class="detail-info">
-        <span> {{ job.timestamp|date:'d F Y H:i' }}</span>
-        <span><a href="{{ job.url }}" target='_blank'>{{ job.company }}</a></span>
-        <span><strong>Contratação:</strong> {{ job.category }}</span>
-        <span><strong>Remuneração:</strong> {% if not job.salary %} N/A {% endif %} R$ {{ job.salary|intcomma }}</span>
-        <span><strong>Modalidade:</strong> {{ job.job_type|title }}</span>
+      <div class="col-md-9 col-xs-9">
+        <p><a href="{% url "index" %}">← Voltar</a></p>
+        <span class="detail-timestamp">{{ job.timestamp|date:'d F' }}</span>
+        <h1 class="detail-title">{{ job.title }}</h1>
+        <div class="detail-about">
+          <h4>Sobre a empresa</h4>
+          <p>{{ job.about|linebreaks }}</p>
+        </div>
+        <div class="detail-description">
+          <h4>Descrição da vaga</h4>
+          <p>{{ job.description|linebreaks }}</p>
+        </div>
+        <div class="detail-about">
+          <h4>Habilidades necessárias</h4>
+          <p>{{ job.skills|linebreaks }}</p>
+        </div>
       </div>
-      <div class="detail-description">
-        <h4>Descrição da vaga</h4>
-        <p>{{ job.description|linebreaks }}</p>
-      </div>
-    </div>
-    <div class="detail-email col-md-10 col-md-offset-1">
-      <div class="col-md-1">
-        <span><i class="glyphicon glyphicon-check"></i></span>
-      </div>
-      <div class="row-apply col-md-11">
-        <h4>Se interessou pela <strong>vaga?</strong></h4>
-        <p><a href="" target="_blank">Participe da seleção</a> e boa sorte!</p>  
-      </div>
-    </div>
-    <div class="share col-md-10 col-md-offset-1">
-      <h4>Compartilhe!</h4>
-      <span><a href="{% url "index" %}" class="btn btn-danger">Voltar</a></span>
+      <aside class="job-detail col-md-3 col-xs-3">
+        <div class="detail-info">
+          <h4><span class="fa fa-building"></span><a href="{{ job.site }}" target='_blank'>{{ job.company }}</a></h4>
+          <h4><span class="fa fa-suitcase"></span>{{ job.category }}</h4>
+          <h4><span class="fa fa-usd"></span>{% if not job.salary %} N/A {% else %} R$ {{ job.salary|intcomma }} {% endif %}</h4>
+          <h4><span class="fa fa-home"></span>{{ job.job_type|title }}</h4>
+        </div>
+        <div class="detail-interest">
+          <h4>Se interessou pela <strong>vaga?</strong></h4>
+          <p><a href="{{ job.url }}" target="_blank">Participe da seleção</a> e boa sorte!</p>
+        </div>
+        <div>
+          <h3>Contatos</h3>
+          <p>{{ job.email }}</p>
+        </div>
+        <div class="detail-share">
+          <h3>Compartilhe!</h3>
+          <span class="face fa fa-3x fa-facebook-square"></span>
+          <span class="link fa fa-3x fa-linkedin-square"></span>
+          <span class="twit fa fa-3x fa-twitter-square"></span>
+        </div>
+      </aside>
     </div>
   </div>
 </div>
