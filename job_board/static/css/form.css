@@ -1,0 +1,18 @@
+form {
+    font-family: 'Lato', sans-serif;
+}   
+
+input {
+    width: 100%;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+#id_category, #id_job_type {
+    margin-left: 0.5em;
+    padding: 4px;
+}

@@ -1,0 +1,15 @@
+{% extends 'jobs/base.html' %}
+
+{% block title %} Adicionar uma nova vaga - Vagas TI Recife {% endblock title %}
+
+{% block content %}
+
+<div class="job-create col-md-9 col-md-offset-1">
+    <h2>Adicione uma nova vaga</h2>
+    <form action="" method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-success" type="submit" value="Adicionar vaga" />
+    </form>    
+</div>
+
+{% endblock content %}
