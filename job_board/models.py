@@ -15,7 +15,7 @@ class Job(models.Model):
     description = models.TextField()
     about = models.TextField()
     skills = models.TextField()
-    slug = models.SlugField(unique=True, editable=False)
+    slug = models.SlugField(unique=True, blank=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
@@ -26,11 +26,12 @@ class Job(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, blank=True)
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta:
         verbose_name_plural = "categories"
@@ -42,6 +43,8 @@ class JobType(models.Model):
 
     def __str__(self):
         return self.name
+
+# FUNCTIONS
 
 def create_slug(instance, new_slug=None):
     slug = slugify(instance.title)
@@ -61,3 +64,4 @@ def pre_save_receiver(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(pre_save_receiver, sender=Job)
+pre_save.connect(pre_save_receiver, sender=Category)

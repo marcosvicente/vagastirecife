@@ -8,8 +8,13 @@ from .forms import CreateJobForm
 from .models import Job, Category
 
 def filter_by_category(request, category):
-    jobs = Job.objects.filter(category__name__iexact=category)
-    return render(request, 'jobs/job_list.html', {'jobs': jobs})
+    categories = Category.objects.all().order_by('title')
+    jobs = Job.objects.filter(category__slug__icontains=category)
+    context = {
+        'jobs': jobs,
+        'categories': categories
+    }
+    return render(request, 'jobs/job_list.html', context)
 
 def job_create(request):
     if request.method == 'POST':
@@ -23,7 +28,7 @@ def job_create(request):
     return render(request, 'jobs/job_create.html', {'form': form})
 
 def job_list(request):
-    categories = Category.objects.all().order_by('name')
+    categories = Category.objects.all().order_by('title')
     jobs = Job.objects.all()
     context = {
         'jobs': jobs,
