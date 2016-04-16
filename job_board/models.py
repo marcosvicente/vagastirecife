@@ -6,8 +6,8 @@ from django.utils.text import slugify
 class Job(models.Model):
     title = models.CharField(max_length=140)
     company = models.CharField(max_length=140)
-    url = models.URLField()
-    site = models.URLField()
+    url = models.URLField(blank=True)
+    site = models.URLField(blank=True)
     email = models.EmailField()
     category = models.ForeignKey('Category')
     job_type = models.ForeignKey('JobType')
@@ -43,13 +43,21 @@ class JobType(models.Model):
     def __str__(self):
         return self.name
 
+def create_slug(instance, new_slug=None):
+    slug = slugify(instance.title)
+    if new_slug is not None:
+        slug = new_slug
+    qs = Job.objects.filter(slug=slug).order_by('-id')
+    exists = qs.exists()
+    if exists:
+        new_slug = '%s-%s' %(slug, qs.first().id)
+        return create_slug(instance, new_slug=new_slug)
+    return slug
+
 
 def pre_save_receiver(sender, instance, *args, **kwargs):
-    slug = slugify(instance.title)
-    exists = Job.objects.filter(slug=slug).exists()
-    if exists:
-        slug = "%s-%s" % (slug, instance.id)
-    instance.slug = slug
+    if not instance.slug:
+        instance.slug = create_slug(instance)
 
 
 pre_save.connect(pre_save_receiver, sender=Job)

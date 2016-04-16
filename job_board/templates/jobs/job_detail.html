@@ -8,6 +8,15 @@
 <div class="container">
   <div class="job-detail row">
     <div class="col-md-10 col-md-offset-1">
+      {% if messages %}
+        <ul class="messages"> 
+        {% for message in messages %}
+          <li {% if message.tags %} class="alert-{{ message.tags }}" {% endif %}> 
+            <span class="glyphicon glyphicon-ok-circle"></span>{{ message }}
+          </li>
+        {% endfor %}
+      {% endif %}
+        </ul>
       <div class="col-md-9 col-xs-9">
         <p><a href="{% url "index" %}">← Voltar</a></p>
         <span class="detail-timestamp">{{ job.timestamp|date:'d F' }}</span>
@@ -42,9 +51,9 @@
         </div>
         <div class="detail-share">
           <h3>Compartilhe!</h3>
-          <span class="face fa fa-3x fa-facebook-square"></span>
-          <span class="link fa fa-3x fa-linkedin-square"></span>
-          <span class="twit fa fa-3x fa-twitter-square"></span>
+          <a href="" target='_blank'><span class="face fa fa-3x fa-facebook-square"></span></a>
+          <a href="" target='_blank'><span class="link fa fa-3x fa-linkedin-square"></span></a>
+          <a href="" target='_blank'><span class="twit fa fa-3x fa-twitter-square"></span></a>
         </div>
       </aside>
     </div>

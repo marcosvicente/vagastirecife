@@ -12,7 +12,10 @@
     <div class="clearfix">
         <p><h6 class="timestamp">{{ job.timestamp|date:"d F Y" }}</h6></p>
         <p class="job-description"> {{ job.description|linebreaks|truncatechars:200 }}</p>
-        <a class="btn btn-success read-more" href="{% url 'job_detail' slug=job.slug %}">Concorrer a esta vaga</a>
+        <div>
+        	<span class="job-category">{{ job.category }}</span>
+        	<a class="btn btn-success read-more" href="{% url 'job_detail' slug=job.slug %}">Concorrer a esta vaga</a>
+        </div>
     </div>
 </div>
 

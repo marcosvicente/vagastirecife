@@ -19,8 +19,6 @@ class CreateJobForm(forms.ModelForm):
         self.fields['about'].label = "Sobre a empresa"
         self.fields['skills'].label = "Habilidades necessárias"
 
-
-
     class Meta:
         model = Job
         fields = ('title', 'company', 'url', 'site', 'email', 'category', 'job_type', 'salary', 'description', 'about', 'skills',)

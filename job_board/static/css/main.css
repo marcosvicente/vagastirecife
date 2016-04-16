@@ -40,6 +40,7 @@
 }
 
 .job-title {
+    color: #34495E;
     font-weight: bold;
 }
 
@@ -120,6 +121,19 @@
 
 .mobile-nav, .mobile-btn, .mobile-logo {
     display: none;
+}
+
+/* ALERT CUSTOMIZING */
+
+.messages {
+    list-style: none;
+}
+
+.messages li {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
 }
 
 /* MOBILE MENU */
