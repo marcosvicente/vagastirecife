@@ -24,3 +24,11 @@ textarea {
     margin-left: 0.5em;
     padding: 4px;
 }
+
+/* error list */ 
+.errorlist  li{
+    list-style-type: none;
+    background:#f00;
+    color:#fff;
+    padding:1.5em;
+}

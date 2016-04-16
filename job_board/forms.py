@@ -1,3 +1,6 @@
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from django import forms
 
 from .models import Job
@@ -21,17 +24,50 @@ class CreateJobForm(forms.ModelForm):
 
     class Meta:
         model = Job
-        fields = ('title', 'company', 'url', 'site', 'email', 'category', 'job_type', 'salary', 'description', 'about', 'skills',)
+        fields = (
+            'title',
+            'company',
+            'url',
+            'site',
+            'email',
+            'category',
+            'job_type',
+            'salary',
+            'description',
+            'about',
+            'skills',
+        )
+
+
         widgets = {
-            'title': forms.TextInput(attrs={'placeholder': 'Digite o título da vaga'}),
-            'company': forms.TextInput(attrs={'placeholder': 'Digite o nome da empresa'}),
-            'url': forms.TextInput(attrs={'placeholder': 'Digite aqui a url da vaga para o processo de seleção', 'required': False}),
-            'site': forms.URLInput(attrs={'placeholder': 'Digite o endereço web da empresa', 'required': False}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Digite o endereço de email para contato'}),
+            'title': forms.TextInput(
+                attrs={'placeholder': 'Digite o título da vaga'}
+            ),
+            'company': forms.TextInput(
+                attrs={'placeholder': 'Digite o nome da empresa'}
+            ),
+            'url': forms.TextInput(
+                attrs={'placeholder': 'Digite aqui a url da vaga para o processo de seleção', 
+                       'required': False}),
+
+            'site': forms.URLInput(
+                attrs={'placeholder': 'Digite o endereço web da empresa',
+                       'required': False
+                       }
+            ),
+            'email': forms.EmailInput(
+                attrs={'placeholder': 'Digite o endereço de email para contato'}
+            ),
             'category': forms.Select(),
             'job_type': forms.Select(),
             'salary': forms.NumberInput(attrs={'required': True}),
-            'description': forms.Textarea(attrs={'placeholder': 'Digite a descrição da vaga, o mais detalhado possivel.'}),
-            'about': forms.Textarea(attrs={'placeholder': 'Fale um pouco da empresa e sua cultura.'}),
-            'skills': forms.Textarea(attrs={'placeholder': 'Descreva detalhadamente o que é necessário para se candaditar a vaga.'})
+            'description': forms.Textarea(
+                attrs={'placeholder': 'Digite a descrição da vaga, o mais detalhado possivel.'}
+            ),
+            'about': forms.Textarea(
+                attrs={'placeholder': 'Fale um pouco da empresa e sua cultura.'}
+            ),
+            'skills': forms.Textarea(
+                attrs={'placeholder': 'Descreva detalhadamente o que é necessário para se candaditar a vaga.'}
+            )
         }

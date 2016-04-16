@@ -46,6 +46,9 @@ class JobType(models.Model):
 
 # FUNCTIONS
 
+"""Funcition for create a new slug"""
+
+
 def create_slug(instance, new_slug=None):
     slug = slugify(instance.title)
     if new_slug is not None:
@@ -53,13 +56,17 @@ def create_slug(instance, new_slug=None):
     qs = Job.objects.filter(slug=slug).order_by('-id')
     exists = qs.exists()
     if exists:
-        new_slug = '%s-%s' %(slug, qs.first().id)
+        new_slug = '%s-%s' % (slug, qs.first().id)
         return create_slug(instance, new_slug=new_slug)
     return slug
+
+# filter category for title
+
 
 def get_category_list():
     categories = Category.objects.filter().order_by('title')
     return categories
+
 
 def pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:

@@ -8,9 +8,82 @@
 	<p><a href="{% url "index" %}">← Voltar</a></p>
     <h2 class="form-title">Adicione uma nova vaga</h2>
     <form action="" method="POST">{% csrf_token %}
-        {{ form.as_p }}
+        <label for=""> {{form.title.label}}</label>
+        {{form.title}}
+        <div class="wow flash">
+            {{form.title.errors}}
+        </div>
+
+
+        <label for=""> {{form.company.label}}</label>
+        {{form.company}}
+        <div class="wow flash">
+            {{form.company.errors}}
+        </div>
+
+        <label for=""> {{form.url.label}}</label>
+        {{form.url}}
+        <div class="wow flash">
+            {{form.url.errors}}
+        </div>
+
+        <label for=""> {{form.site.label}}</label>
+        {{form.site}}
+        <div class="wow flash">
+            {{form.site.errors}}
+        </div>
+
+        <label for=""> {{form.email.label}}</label>
+        {{form.email}}
+        <div class="wow flash">
+            {{form.email.errors}}
+        </div>
+
+        <label for=""> {{form.category.label}}</label>
+        {{form.category}}
+        <div class="wow flash">
+            {{form.category.errors}}
+        </div>
+
+        <label for=""> {{form.job_type.label}}</label>
+        {{form.job_type}}
+        <div class="wow flash">
+            {{form.job_type.errors}}
+        </div>
+
+
+        <label for=""> {{form.salary.label}}</label>
+        {{form.salary}}
+        <div class="wow flash">
+            {{form.salary.errors}}
+        </div>
+
+        <label for=""> {{form.description.label}}</label>
+        {{form.description}}
+        <div class="wow flash">
+            {{form.description.errors}}
+        </div>
+
+        <label for=""> {{form.about.label}}</label>
+        {{form.about}}
+        <div class="wow flash">
+            {{form.about.errors}}
+        </div>
+
+        <label for=""> {{form.skills.label}}</label>
+        {{form.skills}}
+        <div class="wow flash">
+            {{form.skills.errors}}
+        </div>
+
+        
+        
+
+
+    <div class="wow fadeIn">
         <input class="btn btn-success" type="submit" value="Adicionar vaga" />
-    </form>    
+    </div>
+    </form>
 </div>
 
 {% endblock content %}
