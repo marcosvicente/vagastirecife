@@ -7,7 +7,7 @@
 <div id="job" class="job">
     <div class="job-title">
         <h5 class="{{ job.job_type }} job-type">{{ job.job_type }}</h5>
-        <h3 class='job-title'>{{ job.title }}<span class="job-co"> on {{ job.company }}</span>
+        <h3 class='job-title'>{{ job.title|upper }}<span class="job-co"> on {{ job.company }}</span>
     </div>
     <div class="clearfix">
         <p><h6 class="timestamp">{{ job.timestamp|date:"d F Y" }}</h6></p>

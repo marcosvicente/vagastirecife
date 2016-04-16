@@ -12,7 +12,7 @@
         <ul class="messages"> 
         {% for message in messages %}
           <li {% if message.tags %} class="alert-{{ message.tags }}" {% endif %}> 
-            <span class="glyphicon glyphicon-ok-circle"></span>{{ message }}
+            <span class="glyphicon glyphicon-ok-circle"></span> {{ message }}
           </li>
         {% endfor %}
       {% endif %}
@@ -20,7 +20,7 @@
       <div class="col-md-9 col-xs-9">
         <p><a href="{% url "index" %}">← Voltar</a></p>
         <span class="detail-timestamp">{{ job.timestamp|date:'d F' }}</span>
-        <h1 class="detail-title">{{ job.title }}</h1>
+        <h1 class="detail-title">{{ job.title|title }}</h1>
         <div class="detail-about">
           <h4>Sobre a empresa</h4>
           <p>{{ job.about|linebreaks }}</p>
@@ -51,9 +51,9 @@
         </div>
         <div class="detail-share">
           <h3>Compartilhe!</h3>
-          <a href="" target='_blank'><span class="face fa fa-3x fa-facebook-square"></span></a>
-          <a href="" target='_blank'><span class="link fa fa-3x fa-linkedin-square"></span></a>
-          <a href="" target='_blank'><span class="twit fa fa-3x fa-twitter-square"></span></a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target='_blank'><span class="face fa fa-3x fa-facebook-square"></span></a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ job.title }}&summary={{ share_content }}&source={{ request.build_absolute_uri }}" target='_blank'><span class="link fa fa-3x fa-linkedin-square"></span></a>
+          <a href="https://twitter.com/home?status={{ share_content }}%20{{ request.build_absolute_uri }}" target='_blank'><span class="twit fa fa-3x fa-twitter-square"></span></a>
         </div>
       </aside>
     </div>

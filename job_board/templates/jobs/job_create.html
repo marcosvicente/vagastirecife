@@ -5,6 +5,7 @@
 {% block content %}
 
 <div class="job-create col-md-9 col-md-offset-1">
+	<p><a href="{% url "index" %}">← Voltar</a></p>
     <h2 class="form-title">Adicione uma nova vaga</h2>
     <form action="" method="POST">{% csrf_token %}
         {{ form.as_p }}
