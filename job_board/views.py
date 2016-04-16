@@ -5,10 +5,10 @@ from django.contrib import messages
 from django.http import HttpResponse
 
 from .forms import CreateJobForm
-from .models import Job, Category
+from .models import Job, Category, get_category_list
 
 def filter_by_category(request, category):
-    categories = Category.objects.all().order_by('title')
+    categories = get_category_list()
     jobs = Job.objects.filter(category__slug__icontains=category)
     context = {
         'jobs': jobs,

@@ -57,6 +57,9 @@ def create_slug(instance, new_slug=None):
         return create_slug(instance, new_slug=new_slug)
     return slug
 
+def get_category_list():
+    categories = Category.objects.filter().order_by('title')
+    return categories
 
 def pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
